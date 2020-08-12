@@ -1,11 +1,17 @@
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
 }
 
 .navbar {
-  background-color: #8f108f7c;
+  background-color: #8f108f2d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,16 +25,4 @@
   background-color: #282c34;
 }
 
-.totheside {
-  display: flex;
-  flex-direction: row-reverse;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
