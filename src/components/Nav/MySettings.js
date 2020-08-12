@@ -1,17 +1,17 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 import "../../App.css";
-const MyNav = ({ style }) => {
+const MySettings = ({ style }) => {
   return (
     <animated.div style={style}>
       <nav className="navbar">
-        <a>Home</a>
-        <a>About</a>
-        <a>Contact</a>
-        <a>Search</a>
+        <a>Sound</a>
+        <a>Brightnes</a>
+        <a>Privacy</a>
+        <a>Change Password</a>
       </nav>
     </animated.div>
   );
 };
 
-export default MyNav;
+export default MySettings;
