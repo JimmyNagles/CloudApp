@@ -5,7 +5,7 @@ const MyForm = (props) => {
   const [food, setfood] = useState("");
 
   return (
-    <div className="container">
+    <div className="container ">
       <Row>
         <Col s={6} m={6} l={6}>
           <form>
@@ -13,7 +13,7 @@ const MyForm = (props) => {
           </form>
         </Col>
         <Col s={6} m={6} l={6}>
-          {props.children}
+          <div className="right"> {props.children}</div>
         </Col>
       </Row>
     </div>

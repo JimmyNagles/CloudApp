@@ -23,6 +23,7 @@ function App() {
       <MyForm>
         {" "}
         <Button
+          large
           className="btn-flat transparent white-text"
           onClick={() => {
             setNavOpen(!isNavOpen);
