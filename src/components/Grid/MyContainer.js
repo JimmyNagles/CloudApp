@@ -1,7 +1,12 @@
 import React from "react";
+import { Container } from "react-materialize";
 
-const MyContainer = () => {
-  return <div></div>;
+const MyContainer = (props) => {
+  return (
+    <div>
+      <Container className={props.clase}>{props.children}</Container>
+    </div>
+  );
 };
 
 export default MyContainer;

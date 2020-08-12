@@ -1,7 +1,11 @@
 import React from "react";
-
-const MyCol = () => {
-  return <div></div>;
+import { Col } from "react-materialize";
+const MyCol = (props) => {
+  return (
+    <div>
+      <Col className={props.clase}>{props.children}</Col>
+    </div>
+  );
 };
 
 export default MyCol;
