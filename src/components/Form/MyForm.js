@@ -1,16 +1,21 @@
 import React, { useState } from "react";
+import { Col, Row } from "react-materialize";
 
-const MyForm = () => {
-  const [food,  setfood] = useState("");
+const MyForm = (props) => {
+  const [food, setfood] = useState("");
 
   return (
-    <div>
-      <form>
-        <input></input>
-        <input></input>
-        <input></input>
-        <input></input>
-      </form>
+    <div className="container">
+      <Row>
+        <Col s={6} m={6} l={6}>
+          <form>
+            <input></input>
+          </form>
+        </Col>
+        <Col s={6} m={6} l={6}>
+          {props.children}
+        </Col>
+      </Row>
     </div>
   );
 };

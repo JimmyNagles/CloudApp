@@ -5,6 +5,7 @@ import { useSpring, animated } from "react-spring";
 import MyNav from "./components/Nav/MyNav";
 import { Button } from "react-materialize";
 import MySettings from "./components/Nav/MySettings";
+import MyForm from "./components/Form/MyForm";
 
 function App() {
   const [isNavOpen, setNavOpen] = useState(false);
@@ -19,14 +20,17 @@ function App() {
 
   return (
     <animated.div className="backg">
-      <Button
-        className="btn-flat transparent white-text"
-        onClick={() => {
-          setNavOpen(!isNavOpen);
-        }}
-      >
-        Menu
-      </Button>
+      <MyForm>
+        {" "}
+        <Button
+          className="btn-flat transparent white-text"
+          onClick={() => {
+            setNavOpen(!isNavOpen);
+          }}
+        >
+          Menu
+        </Button>
+      </MyForm>
 
       <MyNav style={navAni} />
     </animated.div>
