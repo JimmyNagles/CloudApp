@@ -10,8 +10,7 @@
 
 # production
 /build
-#API Key
-.env
+
 # misc
 .DS_Store
 .env.local
