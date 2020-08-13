@@ -23,6 +23,8 @@ const MyForm = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    console.log(process.env.REACT_APP_API_KEY);
+
     SearchFood(search);
     setSearch("");
   };
