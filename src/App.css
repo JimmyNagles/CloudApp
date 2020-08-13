@@ -4,6 +4,12 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .navbar {
   background-color: #8f108f2d;
   min-height: 100vh;

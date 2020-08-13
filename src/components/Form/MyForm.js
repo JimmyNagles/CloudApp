@@ -11,6 +11,8 @@ const MyForm = (props) => {
     API.search(query)
       .then((res) => setResult(res.data))
       .catch((err) => console.log(err));
+
+    console.log("result", result);
   };
 
   useEffect(() => {
@@ -23,9 +25,10 @@ const MyForm = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(process.env.REACT_APP_API_KEY);
+    console.log(process.env.REACT_APP_SPOON);
 
     SearchFood(search);
+    console.log("result", result);
     setSearch("");
   };
 
