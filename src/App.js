@@ -18,11 +18,6 @@ function App() {
       : "translate3d(100%,0,0) scale(0.3)",
   });
 
-  console.log(
-    "process.env.REACT_APP_SPOON_KEY",
-    process.env.REACT_APP_SPOON_KEY
-  );
-
   return (
     <animated.div className="backg">
       <MyForm>
