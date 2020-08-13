@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build:REACT_APP_SPOON",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -32,8 +32,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "dotenv": "^8.2.0"
   }
 }
