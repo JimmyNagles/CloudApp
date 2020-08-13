@@ -21,7 +21,6 @@ function App() {
   return (
     <animated.div className="backg">
       <MyForm>
-        {" "}
         <Button
           large
           className="btn-flat transparent white-text"
