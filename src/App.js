@@ -9,8 +9,6 @@ import RecipeCard from "./components/Card/RecipeCard";
 
 function App() {
   const [isNavOpen, setNavOpen] = useState(false);
-  const [isSettings, setSettings] = useState(false);
-  const [isFriends, setFriends] = useState(false);
 
   const navAni = useSpring({
     transform: isNavOpen
