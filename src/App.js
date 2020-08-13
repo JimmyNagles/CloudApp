@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { useSpring, animated } from "react-spring";
 import MyNav from "./components/Nav/MyNav";
-import { Button } from "react-materialize";
-import MySettings from "./components/Nav/MySettings";
+import { Button, Container, Row } from "react-materialize";
 import MyForm from "./components/Form/MyForm";
-import { MyCard } from "./components/Card/MyCard";
 import API from "./utils/API";
+import RecipeCard from "./components/Card/RecipeCard";
+
 function App() {
   const [isNavOpen, setNavOpen] = useState(false);
   const [isSettings, setSettings] = useState(false);
@@ -59,6 +58,19 @@ function App() {
         </Button>
       </MyForm>
 
+      <Container>
+        <Row>
+          {result.recipes &&
+            result.recipes.map((recipe) => (
+              <RecipeCard
+                image={recipe.image}
+                key={recipe.id}
+                title={recipe.title}
+                link={recipe.sourceUrl}
+              ></RecipeCard>
+            ))}
+        </Row>
+      </Container>
       <MyNav style={navAni} />
     </animated.div>
   );
