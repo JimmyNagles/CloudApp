@@ -7,6 +7,8 @@ import MyForm from "./components/Form/MyForm";
 import API from "./utils/API";
 import RecipeCard from "./components/Card/RecipeCard";
 
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+
 function App() {
   const [isNavOpen, setNavOpen] = useState(false);
 
@@ -40,6 +42,7 @@ function App() {
 
   return (
     <animated.div className="backg">
+      <AmplifySignOut />
       <MyForm
         value={search}
         handleFormSubmit={handleFormSubmit}
@@ -74,4 +77,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

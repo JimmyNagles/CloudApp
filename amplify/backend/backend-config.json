@@ -1,1 +1,10 @@
-{}
+{
+	"auth": {
+		"reactawsd9582a15": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
