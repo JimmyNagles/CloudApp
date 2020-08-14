@@ -1,11 +1,13 @@
 import React from "react";
 import { Container } from "react-materialize";
+import MyForm from "../components/Form/MyForm";
 
 export const NewNotes = () => {
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <Container>
-        <h1>Create NewNotes</h1>
+        <br></br>
+        <MyForm></MyForm>
       </Container>
     </div>
   );

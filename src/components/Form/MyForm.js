@@ -1,55 +1,84 @@
 import React, { useState, useEffect } from "react";
-import { Col, Row, Container } from "react-materialize";
+import { Col, Row, TextInput, Textarea, Button } from "react-materialize";
 import "../../App.css";
-
-import RecipeCard from "../Card/RecipeCard";
-
 const MyForm = (props) => {
+  const [Notes, SetNotes] = useState({
+    Date: "",
+    Location: "",
+    Music: "",
+    Mood: "",
+    Text: "",
+  });
 
+  const HandleChange = (event) => {
+    const { name, value } = event.target;
 
-  // const [result, setResult] = useState({});
-  // const [search, setSearch] = useState("");
+    SetNotes({
+      ...Notes,
+      [name]: value,
+    });
+  };
 
-  // const SearchFood = (query) => {
-  //   API.search(query)
-  //     .then((res) => setResult(res.data))
-  //     .catch((err) => console.log(err));
-  // };
+  const HandleSubmit = (event) => {
+    event.preventDefault();
 
-  // const handleInputChange = (event) => {
-  //   setSearch(event.target.value);
-  // };
-
-  // const handleFormSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log(process.env.REACT_APP_SPOON);
-
-  //   SearchFood(search);
-  //   console.log("result", result);
-  //   setSearch("");
-  // };
-
+    const { Location, Music, Mood, Text } = Notes;
+  };
   return (
-    <div className="container ">
-      <Row>
-        <Col s={9} m={10} l={10}>
-          <form>
-            <input
-              onChange={props.handleInputChange}
-              value={props.value}
-              placeholder="Search Recipe"
-              className="white-text"
-              type="text"
-            ></input>
-            <a onClick={props.handleFormSubmit} className="btn-flat white-text transparent right ">
-              Search
-            </a>
-          </form>
-        </Col>
-        <Col s={3} m={2} l={2}>
-          <div className="right"> {props.children}</div>
-        </Col>
-      </Row>
+    <div>
+      <TextInput
+        onChange={HandleChange}
+        value={Notes.Date}
+        name="Date"
+        className="orange-text"
+      >
+        Date
+      </TextInput>
+      <TextInput
+        onChange={HandleChange}
+        value={Notes.Location}
+        name="Location"
+        className="orange-text"
+      >
+        Location
+      </TextInput>
+
+      <TextInput
+        onChange={HandleChange}
+        value={Notes.Music}
+        name="Music"
+        className="orange-text"
+      >
+        Music: Song-Artist
+      </TextInput>
+      <TextInput
+        onChange={HandleChange}
+        value={Notes.Mood}
+        name="Mood"
+        className="orange-text"
+      >
+        Mood: from 1-10
+      </TextInput>
+
+      <Textarea
+        onChange={HandleChange}
+        value={Notes.Text}
+        name="Text"
+        className="orange-text"
+        style={{ height: "200px" }}
+        id="Textarea-12"
+        l={12}
+        m={12}
+        s={12}
+        xl={12}
+      />
+
+      <Button
+        className="btn-flat orange-text transparent"
+        onClick={HandleSubmit}
+      >
+        submit
+      </Button>
     </div>
   );
 };
