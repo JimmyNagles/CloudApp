@@ -4,35 +4,26 @@ import { useSpring, animated } from "react-spring";
 import MyNav from "./components/Nav/MyNav";
 import { Button, Container, Row } from "react-materialize";
 import MyForm from "./components/Form/MyForm";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import { Home } from "./Pages/Home";
+import { Notes } from "./Pages/Notes";
+import { NewNotes } from "./Pages/NewNotes";
 
 function App() {
   const [isNavOpen, setNavOpen] = useState(false);
 
-  const navAni = useSpring({
-    transform: isNavOpen
-      ? "translate3d(0,0,0) scale(1)"
-      : "translate3d(100%,0,0) scale(0.3)",
-  });
-
   return (
     <animated.div className="backg">
-      <AmplifySignOut />
-      <MyForm>
-        <Button
-          large
-          className="btn-flat transparent white-text"
-          onClick={() => {
-            setNavOpen(!isNavOpen);
-          }}
-        >
-          {" "}
-          Menu
-        </Button>
-      </MyForm>
-
-      <MyNav style={navAni} />
+      <Router>
+        <MyNav></MyNav>
+        <AmplifySignOut />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/notes" component={Notes} />
+          <Route exact path="/newnotes" component={NewNotes} />
+        </Switch>
+      </Router>
     </animated.div>
   );
 }
