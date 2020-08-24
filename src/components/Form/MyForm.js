@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Col, Row, TextInput, Textarea, Button } from "react-materialize";
 import "../../App.css";
 const MyForm = (props) => {
+  const [allNotes, setAllNotes] = useState([]);
+
   const [Notes, SetNotes] = useState({
     Date: "",
     Location: "",
@@ -32,7 +34,7 @@ const MyForm = (props) => {
         name="Date"
         className="orange-text"
       >
-        Date
+        <h6 className="orange-text"> Date </h6>
       </TextInput>
       <TextInput
         onChange={HandleChange}
@@ -40,7 +42,7 @@ const MyForm = (props) => {
         name="Location"
         className="orange-text"
       >
-        Location
+        <h6 className="orange-text"> Location</h6>
       </TextInput>
 
       <TextInput
@@ -49,7 +51,7 @@ const MyForm = (props) => {
         name="Music"
         className="orange-text"
       >
-        Music: Song-Artist
+        <h6 className="orange-text"> Music: Song-Artist </h6>
       </TextInput>
       <TextInput
         onChange={HandleChange}
@@ -57,11 +59,12 @@ const MyForm = (props) => {
         name="Mood"
         className="orange-text"
       >
-        Mood: from 1-10
+        <h6 className="orange-text">Mood: from 1-10 </h6>
       </TextInput>
 
       <Textarea
         onChange={HandleChange}
+        placeholder={"type here"}
         value={Notes.Text}
         name="Text"
         className="orange-text"
@@ -71,7 +74,7 @@ const MyForm = (props) => {
         m={12}
         s={12}
         xl={12}
-      />
+      ></Textarea>
 
       <Button
         className="btn-flat orange-text transparent"
