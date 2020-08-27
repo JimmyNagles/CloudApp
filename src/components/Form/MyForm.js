@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row, TextInput, Textarea, Button } from "react-materialize";
 import "../../App.css";
-const MyForm = (props) => {
-  const [allNotes, setAllNotes] = useState([]);
+import { API } from "aws-amplify";
+import { listNotess } from "../../graphql/queries";
+import { createNotes as createNoteMutation } from "../../graphql/mutations";
 
-  const [Notes, SetNotes] = useState({
-    Date: "",
-    Location: "",
-    Music: "",
-    Mood: "",
-    Text: "",
-  });
+const MyForm = (props) => {
+  const initialFormState = {
+    date: "",
+    music: "",
+    mood: "",
+    text: "",
+  };
+
+  const [Notes, SetNote] = useState(initialFormState);
 
   const HandleChange = (event) => {
     const { name, value } = event.target;
 
-    SetNotes({
+    SetNote({
       ...Notes,
       [name]: value,
     });
@@ -24,49 +27,54 @@ const MyForm = (props) => {
   const HandleSubmit = (event) => {
     event.preventDefault();
 
-    const { Location, Music, Mood, Text } = Notes;
+    const data = { ...Notes };
+
+    API.graphql({
+      query: createNoteMutation,
+      variables: { input: data },
+    });
   };
   return (
     <div>
       <TextInput
         onChange={HandleChange}
-        value={Notes.Date}
-        name="Date"
+        value={Notes.date}
+        name="date"
         className="orange-text"
       >
-        <h6 className="orange-text"> Date </h6>
+        <h6 className="orange-text"> date </h6>
       </TextInput>
-      <TextInput
+      {/* <TextInput
         onChange={HandleChange}
-        value={Notes.Location}
-        name="Location"
+        value={Notes.location}
+        name="location"
         className="orange-text"
       >
-        <h6 className="orange-text"> Location</h6>
-      </TextInput>
+        <h6 className="orange-text"> location</h6>
+      </TextInput> */}
 
       <TextInput
         onChange={HandleChange}
-        value={Notes.Music}
-        name="Music"
+        value={Notes.music}
+        name="music"
         className="orange-text"
       >
-        <h6 className="orange-text"> Music: Song-Artist </h6>
+        <h6 className="orange-text"> music: Song-Artist </h6>
       </TextInput>
       <TextInput
         onChange={HandleChange}
-        value={Notes.Mood}
-        name="Mood"
+        value={Notes.mood}
+        name="mood"
         className="orange-text"
       >
-        <h6 className="orange-text">Mood: from 1-10 </h6>
+        <h6 className="orange-text">mood: from 1-10 </h6>
       </TextInput>
 
       <Textarea
         onChange={HandleChange}
         placeholder={"type here"}
-        value={Notes.Text}
-        name="Text"
+        value={Notes.text}
+        name="text"
         className="orange-text"
         style={{ height: "200px" }}
         id="Textarea-12"

@@ -1,21 +1,51 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const addNote = /* GraphQL */ `
-  mutation AddNote(
-    $id: ID!
-    $date: String
-    $text: String!
-    $music: String
-    $mood: String
+export const createNotes = /* GraphQL */ `
+  mutation CreateNotes(
+    $input: CreateNotesInput!
+    $condition: ModelNotesConditionInput
   ) {
-    addNote(id: $id, date: $date, text: $text, music: $music, mood: $mood) {
+    createNotes(input: $input, condition: $condition) {
       id
       date
       text
       music
-      location
       mood
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateNotes = /* GraphQL */ `
+  mutation UpdateNotes(
+    $input: UpdateNotesInput!
+    $condition: ModelNotesConditionInput
+  ) {
+    updateNotes(input: $input, condition: $condition) {
+      id
+      date
+      text
+      music
+      mood
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteNotes = /* GraphQL */ `
+  mutation DeleteNotes(
+    $input: DeleteNotesInput!
+    $condition: ModelNotesConditionInput
+  ) {
+    deleteNotes(input: $input, condition: $condition) {
+      id
+      date
+      text
+      music
+      mood
+      createdAt
+      updatedAt
     }
   }
 `;

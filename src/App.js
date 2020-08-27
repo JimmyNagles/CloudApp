@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import "./App.css";
 import { useSpring, animated } from "react-spring";
-import MyNav from "./components/Nav/MyNav";
-import { Button, Container, Row } from "react-materialize";
-import MyForm from "./components/Form/MyForm";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import MyNav from "./components/Nav/MyNav";
 import { Home } from "./Pages/Home";
 import { Notes } from "./Pages/Notes";
 import { NewNotes } from "./Pages/NewNotes";
+import "./App.css";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
 function App() {
   const [isNavOpen, setNavOpen] = useState(false);

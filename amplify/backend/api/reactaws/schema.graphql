@@ -1,28 +1,7 @@
-schema {
-  query: Query
-  mutation: Mutation
-}
-
-type Query {
-  getNotes: [Note]
-  getNote(id: ID!): Note
-}
-
-type Mutation {
-  addNote(
-    id: ID!
-    date: String
-    text: String!
-    music: String
-    mood: String
-  ): Note!
-}
-
-type Note {
+type Notes @model {
   id: ID!
-  date: String!
+  date: String
   text: String!
   music: String
-  location: String!
-  mood: String!
+  mood: String
 }
