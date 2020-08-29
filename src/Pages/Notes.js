@@ -18,29 +18,13 @@ export const Notes = () => {
     setAllNotes(apiData.data.listNotess.items);
   }
 
-  // [1, 2, 3, 4, 5].map(a => {
-  // if (a % 2) {
-  //   return a + 2
-  // }
-  // else return
-  //
-  // });
-
-  // [1, 2, 3, 4, 5].map(a => a + 2);
-
   return (
     <div>
       <Container className="red-text">
         {allNotes.map(({ id, date, mood, text }) => {
           return (
             <NotesCard key={id} id={id} text={text} mood={mood} date={date} />
-            // <ul>
-
-            //   <li>{id}</li>
-            //   <li>{date}</li>
-            //   <li>{mood}</li>
-            //   <li>{text}</li>
-            // </ul>
+       
           );
           console.log("x", x.id);
           console.log("x", x.date);
