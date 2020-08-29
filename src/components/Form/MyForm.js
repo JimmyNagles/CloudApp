@@ -4,7 +4,7 @@ import "../../App.css";
 import { API } from "aws-amplify";
 import { listNotess } from "../../graphql/queries";
 import { createNotes as createNoteMutation } from "../../graphql/mutations";
-
+import { Link } from "react-router-dom";
 const MyForm = (props) => {
   const initialFormState = {
     date: "",
@@ -86,9 +86,12 @@ const MyForm = (props) => {
 
       <Button
         className="btn-flat orange-text transparent"
+        disabled={!(Notes.text && Notes.mood)}
         onClick={HandleSubmit}
       >
-        submit
+        <Link disabled={!(Notes.text && Notes.mood)} to="/notes">
+          <h7 className="orange-text">submit</h7>
+        </Link>
       </Button>
     </div>
   );

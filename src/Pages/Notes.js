@@ -24,7 +24,6 @@ export const Notes = () => {
         {allNotes.map(({ id, date, mood, text }) => {
           return (
             <NotesCard key={id} id={id} text={text} mood={mood} date={date} />
-       
           );
           console.log("x", x.id);
           console.log("x", x.date);
