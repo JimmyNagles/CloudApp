@@ -9,6 +9,7 @@ export const getNotes = /* GraphQL */ `
       text
       music
       mood
+      location
       createdAt
       updatedAt
     }
@@ -27,6 +28,7 @@ export const listNotess = /* GraphQL */ `
         text
         music
         mood
+        location
         createdAt
         updatedAt
       }

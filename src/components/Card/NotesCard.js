@@ -14,9 +14,8 @@ function NotesCard(props) {
         </div>
 
         <div className="card-action">
-          <a className="">
-          {props.date}
-          </a>
+          <a className="">{props.date}</a>
+          <a className="">{props.location}</a>
         </div>
       </div>
     </div>

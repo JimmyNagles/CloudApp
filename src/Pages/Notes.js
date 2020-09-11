@@ -21,17 +21,17 @@ export const Notes = () => {
   return (
     <div>
       <Container className="red-text">
-        {allNotes.map(({ id, date, mood, text }) => {
+        {allNotes.map(({ id, date, mood, text, location }) => {
           return (
-            <NotesCard key={id} id={id} text={text} mood={mood} date={date} />
+            <NotesCard
+              key={id}
+              id={id}
+              text={text}
+              mood={mood}
+              date={date}
+              location={location}
+            />
           );
-          console.log("x", x.id);
-          console.log("x", x.date);
-          console.log("x", x.mood);
-          console.log("x", x.text);
-          {
-            /* <h2 key={x.id}></h2> */
-          }
         })}
       </Container>
     </div>

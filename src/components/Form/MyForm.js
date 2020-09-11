@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Col, Row, TextInput, Textarea, Button } from "react-materialize";
 import "../../App.css";
 import { API } from "aws-amplify";
-import { listNotess } from "../../graphql/queries";
+
 import { createNotes as createNoteMutation } from "../../graphql/mutations";
 import { Link } from "react-router-dom";
 const MyForm = (props) => {
@@ -11,6 +11,7 @@ const MyForm = (props) => {
     music: "",
     mood: "",
     text: "",
+    location: "",
   };
 
   const [Notes, SetNote] = useState(initialFormState);
@@ -44,14 +45,14 @@ const MyForm = (props) => {
       >
         <h6 className="orange-text"> date </h6>
       </TextInput>
-      {/* <TextInput
+      <TextInput
         onChange={HandleChange}
         value={Notes.location}
         name="location"
         className="orange-text"
       >
         <h6 className="orange-text"> location</h6>
-      </TextInput> */}
+      </TextInput>
 
       <TextInput
         onChange={HandleChange}

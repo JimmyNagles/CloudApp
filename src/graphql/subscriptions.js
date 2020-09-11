@@ -9,6 +9,7 @@ export const onCreateNotes = /* GraphQL */ `
       text
       music
       mood
+      location
       createdAt
       updatedAt
     }
@@ -22,6 +23,7 @@ export const onUpdateNotes = /* GraphQL */ `
       text
       music
       mood
+      location
       createdAt
       updatedAt
     }
@@ -35,6 +37,7 @@ export const onDeleteNotes = /* GraphQL */ `
       text
       music
       mood
+      location
       createdAt
       updatedAt
     }
